@@ -1,9 +1,13 @@
 package com.test.sample.web;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+//@RestController
+@Controller
+@RequestMapping("/test")
 public class HelloController {
 	
 	@RequestMapping("/hello")
@@ -12,8 +16,8 @@ public class HelloController {
 		return "index";
 	}
 	@RequestMapping("/main")
-	public String tomain() {
-		System.out.println("main");
+	public String tomain(ModelMap map) {
+		map.addAttribute("host", "http://blog.didispace.com");
 		return "main";
 	}
 }

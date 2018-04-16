@@ -1,0 +1,96 @@
+EMBEDDED SERVER CONFIGURATION (ServerProperties)
+
+server.port=8080
+server.address= # bind to a specific NIC
+server.session-timeout= # session timeout in seconds
+server.context-path= # the context path, defaults to '/'
+server.servlet-path= # the servlet path, defaults to '/'
+server.tomcat.access-log-pattern= # log pattern of the access log
+server.tomcat.access-log-enabled=false # is access logging enabled
+server.tomcat.protocol-header=x-forwarded-proto # ssl forward headers
+server.tomcat.remote-ip-header=x-forwarded-for
+server.tomcat.basedir=/tmp # base dir (usually not needed, defaults to tmp)
+server.tomcat.background-processor-delay=30; # in seconds
+server.tomcat.max-threads = 0 # number of threads in protocol handler
+server.tomcat.uri-encoding = UTF-8 # character encoding to use for URL decoding
+
+
+SPRING MVC (HttpMapperProperties)
+
+http.mappers.json-pretty-print=false # pretty print JSON
+http.mappers.json-sort-keys=false # sort keys
+spring.mvc.locale= # set fixed locale, e.g. en_UK
+spring.mvc.date-format= # set fixed date format, e.g. dd/MM/yyyy
+spring.mvc.message-codes-resolver-format= # PREFIX_ERROR_CODE / POSTFIX_ERROR_CODE
+spring.view.prefix= # MVC view prefix
+spring.view.suffix= # ... and suffix
+spring.resources.cache-period= # cache timeouts in headers sent to browser
+spring.resources.add-mappings=true # if default mappings should be added
+
+
+THYMELEAF (ThymeleafAutoConfiguration)
+
+spring.thymeleaf.prefix=classpath:/templates/
+spring.thymeleaf.suffix=.html
+spring.thymeleaf.mode=HTML5
+spring.thymeleaf.encoding=UTF-8
+spring.thymeleaf.content-type=text/html # ;charset=<encoding> is added
+spring.thymeleaf.cache=true # set to false for hot refresh
+
+
+FREEMARKER (FreeMarkerAutoConfiguration)
+
+spring.freemarker.allowRequestOverride=false
+spring.freemarker.allowSessionOverride=false
+spring.freemarker.cache=true
+spring.freemarker.checkTemplateLocation=true
+spring.freemarker.contentType=text/html
+spring.freemarker.exposeRequestAttributes=false
+spring.freemarker.exposeSessionAttributes=false
+spring.freemarker.exposeSpringMacroHelpers=false
+spring.freemarker.prefix=
+spring.freemarker.requestContextAttribute=
+spring.freemarker.settings.*=
+spring.freemarker.suffix=.ftl
+spring.freemarker.templateEncoding=UTF-8
+spring.freemarker.templateLoaderPath=classpath:/templates/
+spring.freemarker.viewNames= # whitelist of view names that can be resolved
+
+
+GROOVY TEMPLATES (GroovyTemplateAutoConfiguration)
+
+spring.groovy.template.allowRequestOverride=false
+spring.groovy.template.allowSessionOverride=false
+spring.groovy.template.cache=true
+spring.groovy.template.configuration.*= # See Groovy's TemplateConfiguration
+spring.groovy.template.contentType=text/html
+spring.groovy.template.prefix=classpath:/templates/
+spring.groovy.template.suffix=.tpl
+spring.groovy.template.templateEncoding=UTF-8
+spring.groovy.template.viewNames= # whitelist of view names that can be resolved
+
+
+VELOCITY TEMPLATES (VelocityAutoConfiguration)
+
+spring.velocity.allowRequestOverride=false
+spring.velocity.allowSessionOverride=false
+spring.velocity.cache=true
+spring.velocity.checkTemplateLocation=true
+spring.velocity.contentType=text/html
+spring.velocity.dateToolAttribute=
+spring.velocity.exposeRequestAttributes=false
+spring.velocity.exposeSessionAttributes=false
+spring.velocity.exposeSpringMacroHelpers=false
+spring.velocity.numberToolAttribute=
+spring.velocity.prefix=
+spring.velocity.properties.*=
+spring.velocity.requestContextAttribute=
+spring.velocity.resourceLoaderPath=classpath:/templates/
+spring.velocity.suffix=.vm
+spring.velocity.templateEncoding=UTF-8
+spring.velocity.viewNames= # whitelist of view names that can be resolved
+INTERNATIONALIZATION (MessageSourceAutoConfiguration)
+
+spring.messages.basename=messages
+spring.messages.cacheSeconds=-1
+spring.messages.encoding=UTF-8
